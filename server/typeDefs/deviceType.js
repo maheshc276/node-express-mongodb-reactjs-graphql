@@ -1,29 +1,32 @@
 var GraphQLString = require('graphql').GraphQLString;
+var GraphQLInt = require('graphql').GraphQLInt;
 var GraphQLDate = require('graphql-date');
+var GraphQLObjectType = require('graphql').GraphQLObjectType;
 
-var bookType = new GraphQLObjectType({
-    name: 'book',
+
+ var deviceType = new GraphQLObjectType({
+    name: 'device_config',
     fields: function () {
       return {
         _id: {
           type: GraphQLString
         },
-        isbn: {
+        user_config_id: {
           type: GraphQLString
         },
-        title: {
+        name: {
           type: GraphQLString
         },
-        author: {
+        device_reg_id: {
           type: GraphQLString
         },
-        description: {
+        email_id: {
           type: GraphQLString
         },
-        published_year: {
+        mobile_no: {
           type: GraphQLInt
         },
-        publisher: {
+        stop_notify: {
           type: GraphQLString
         },
         updated_date: {
@@ -33,4 +36,4 @@ var bookType = new GraphQLObjectType({
     }
   });
 
-  module.exports = bookType;
+  module.exports = deviceType;
